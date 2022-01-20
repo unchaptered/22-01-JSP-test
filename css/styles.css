@@ -4,6 +4,7 @@
 /* template */
 @import "./components/template/nav.css";
 @import "./components/template/main.css";
+@import "./components/template/footer.css";
 
 * {
     box-sizing: border-box;
