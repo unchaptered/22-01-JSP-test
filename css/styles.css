@@ -15,14 +15,14 @@ body {
     font-family: 'Noto Sans KR', sans-serif;
 }
 a {
-    font-size: 18px;
+    font-size: var(--link-font-);
 
     /* reset */
     color: initial;
     text-decoration: none;
 }
 button {
-    font-size: 18px;
+    font-size: var(--button-font-);
 
     /* reset */
     border: none;
@@ -32,5 +32,5 @@ button {
     cursor: pointer;
 }
 svg {
-    width: 30px;
+    width: var(--svg-width-);
 }

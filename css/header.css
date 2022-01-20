@@ -1,7 +1,5 @@
-:root {
-    --header-backColor-: rgb(241, 241, 241);
-    --header-color: #5C626A;
-}
+@import "./components/root/_root.css";
+
 .header_container {
     background-color: var(--header-backColor-);
     width: 100%;
