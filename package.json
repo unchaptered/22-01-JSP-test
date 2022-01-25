@@ -1,0 +1,19 @@
+{
+  "name": "project-2022-01-jsp-test",
+  "version": "1.0.0",
+  "description": "학원 JSP 프로젝트 의 프로토 타입 개발",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/unchaptered/22-01-JSP-test.git"
+  },
+  "author": "unchaptered",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/unchaptered/22-01-JSP-test/issues"
+  },
+  "homepage": "https://github.com/unchaptered/22-01-JSP-test#readme"
+}

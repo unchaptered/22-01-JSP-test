@@ -1,6 +1,7 @@
 #main {
     padding-top: calc(86px);
     /* nav 50px + 추가여백 20px */
+    min-height: calc(100vh - 500px);
 }
 .main_content {
     width: 1100px;

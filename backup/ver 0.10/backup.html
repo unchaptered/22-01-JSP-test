@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./css/styles.css">
+    <style>
+        :root {
+            --header-backColor-: rgb(241, 241, 241);
+            --header-color: #5C626A;
+        }
+        .header_container {
+            background-color: var(--header-backColor-);
+            width: 100%;
+            height: 400px;
+            color: var(--header-color);
+        }
+        .header {
+            border: 1px solid black;
+            
+            padding: 20px 0;
+
+            width: 1100px;
+            margin: 0 auto;
+            height: 400px;
+
+            gap: 10px;
+            display: flex;
+            flex-direction: column;
+        }
+        .haeder_title_container {
+            gap: 3px;
+            display: flex;
+            align-items: center;
+        }
+        .haeder_title_container > svg {
+            transform: translateY(3px);
+        }
+        .haeder_title_container > h2 {
+            padding-left: 30px;
+            font-size: 28px;
+            font-weight: 500;
+        }
+        @media screen and (max-width: 1200px) {
+            .header {
+                width: 100%;
+            }
+        }
+        /* 자식들로 header_content 를 가진다. */
+        .header_content_slider {
+            display: flex;
+            align-items: center;
+        }
+        .header_content {
+            /* header_content_center 를 위한 relative */
+            position: relative;
+
+            width: 100%;
+            max-width: 100vw;
+            height: 300px;
+
+            gap: 30px;
+            display: flex;
+            justify-content: space-between;
+        }
+        /* 좌우 화살표 */
+        .header_content > div:not([class="header_content_center"]) {
+            width: 35px;
+            
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .header_content > div:not([class="header_content_center"]) > p {
+            font-size: 16px;
+            font-weight: 700;
+        }
+        /* 이미지칸 */
+        .header_content_center {
+            /* header_content 의 relative 를 이용 */
+            position: absolute;
+            top: 0;
+            left: 50px;
+
+            width: calc(100% - 100px);
+
+            height: auto;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: var(--header-backColor-);
+        }
+        .header_content_center:nth-child(3) {
+            transform: translateX(100px);
+            background-color: red;
+        }
+        /* header_content_cetner 의 자식들 : _img, _datas */
+        .header_content_center_img {
+            height: 300px;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .header_content_center_img > img {
+            height: 90%;
+            filter: drop-shadow(10px 10px 4px rgba(0, 0, 0, 0.3));
+
+        }
+        .header_content_center_datas {
+            padding: 0 0 0 60px;
+
+            gap: 20px;
+            display: flex;
+            flex-direction: column;
+        }
+        /* header_content_center_datas 의 자식들 : header_title, _infos, _meta */
+        .header_title {
+            font-size: 30px;
+        }
+        .header_infos {
+            font-size: 16px;
+        }
+        .header_meta {
+            font-size: 15px;
+        }
+        .header_infos,
+        .header_meta {
+            padding-left: 10px;
+        }
+        .header_infos_short {
+            display: none;
+        }
+        @media screen and (max-width: 1000px) {
+            .header_infos {
+                display: none;
+            }
+            .header_infos_short {
+                display: initial;
+            }
+        }
+        @media screen and (max-width: 800px) {
+            .header_title {
+                font-size: 25px;
+            }
+            .header_meta {
+                font-size: 12px;
+            }
+            .header_infos_short {
+                display: none;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- nav 는 z-index 99 -->
+    <nav id="nav">
+        <button>Books</button>
+    </nav>
+
+    <main id="main">
+        <!-- 슬라이드 버튼은 z-index 30 -->
+        <header class="header_container">
+            <div class="header">
+                <div class="haeder_title_container">
+                    <h2>Weekly Best</h2>
+                </div>
+                <div class="header_content_slider">
+                    <div class="header_content">
+                        <div class="haeder_content-left">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" /></svg>
+                        </div>
+                        <div class="header_content_center">
+                            <div class="header_content_center_img">
+                                <img src="./img/cover__1.jpg">
+                            </div>
+                            <div class="header_content_center_datas">
+                                <h3 class="header_title">인문학의 숲</h3>
+                                <h5 class="header_infos">"압도적인 완독률을 자랑하는 흡입력 만점 소설"
+                                    <비밀의 계절>로 유명한 도나 타트가 11년 만에 선보인 신작 소설. 카렐 파브리티우스의 실제 그림을 소재로 한 이 책은 미술관 폭탄 테러에서 엄마를 잃고 홀로 살아남은 소년이 우연히 명화를 손에 넣게 되면서 시작한다. 예술 작품에 얽힌 기구한 운명을 풀어가는 과정에서 작가 특유의 화려한 문장과 세밀한 설정들을 확인할 수 있다. 평범한 인생에서 벗어나버린 소년이 자신의 삶을 되찾기 위해 싸우는 모습은 미술품이나 골동품을 다루는 작품 속 배경 속에서 이국적이고도 드라마틱하게 펼쳐지며, 예술 시장을 중심으로 사회 상류층과 이민자들의 세계가 나뉜 모습 등을 보면서 현재 세계의 씁쓸한 면모도 만날 수 있다.</h5>
+                                <h5 class="header_infos header_infos_short">"압도적인 완독률을 자랑하는 흡입력 만점 소설"<비밀의 계절>로 유명한 도나 타트가 11년 만에 선보인 신작 소설. 카렐 파브리티우스의 실제 그림을 소재로 한 이 책은 미술관 폭탄 테러에서 엄마를 잃고 홀로 살아남은 소년이 우연히 명화를 손에 넣게 되면서 시작한다.</h5>
+                                <div>
+                                    <h5 class="header_meta">저자 | 김필순</h5>
+                                    <h5 class="header_meta">발행 | 2022-01-17</h5>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="header_content_center">
+                            <div class="header_content_center_img">
+                                <img src="./img/cover__1.jpg">
+                            </div>
+                            <div class="header_content_center_datas">
+                                <h3 class="header_title">인문학의 숲</h3>
+                                <h5 class="header_infos">"압도적인 완독률을 자랑하는 흡입력 만점 소설"
+                                    <비밀의 계절>로 유명한 도나 타트가 11년 만에 선보인 신작 소설. 카렐 파브리티우스의 실제 그림을 소재로 한 이 책은 미술관 폭탄 테러에서 엄마를 잃고 홀로 살아남은 소년이 우연히 명화를 손에 넣게 되면서 시작한다. 예술 작품에 얽힌 기구한 운명을 풀어가는 과정에서 작가 특유의 화려한 문장과 세밀한 설정들을 확인할 수 있다. 평범한 인생에서 벗어나버린 소년이 자신의 삶을 되찾기 위해 싸우는 모습은 미술품이나 골동품을 다루는 작품 속 배경 속에서 이국적이고도 드라마틱하게 펼쳐지며, 예술 시장을 중심으로 사회 상류층과 이민자들의 세계가 나뉜 모습 등을 보면서 현재 세계의 씁쓸한 면모도 만날 수 있다.</h5>
+                                <h5 class="header_infos header_infos_short">"압도적인 완독률을 자랑하는 흡입력 만점 소설"<비밀의 계절>로 유명한 도나 타트가 11년 만에 선보인 신작 소설. 카렐 파브리티우스의 실제 그림을 소재로 한 이 책은 미술관 폭탄 테러에서 엄마를 잃고 홀로 살아남은 소년이 우연히 명화를 손에 넣게 되면서 시작한다.</h5>
+                                <div>
+                                    <h5 class="header_meta">저자 | 김필순</h5>
+                                    <h5 class="header_meta">발행 | 2022-01-17</h5>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="haeder_content-right">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" /></svg>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+    </main>
+</body>
+<script>
+    const headerDatas=[
+        {
+            link: "./img/cover__1.jpg",
+            title: "인문학의 숲",
+            infos_long: `"압도적인 완독률을 자랑하는 흡입력 만점 소설" <비밀의 계절>로 유명한 도나 타트가 11년 만에 선보인 신작 소설. 카렐 파브리티우스의 실제 그림을 소재로 한 이 책은 미술관 폭탄 테러에서 엄마를 잃고 홀로 살아남은 소년이 우연히 명화를 손에 넣게 되면서 시작한다. 예술 작품에 얽힌 기구한 운명을 풀어가는 과정에서 작가 특유의 화려한 문장과 세밀한 설정들을 확인할 수 있다. 평범한 인생에서 벗어나버린 소년이 자신의 삶을 되찾기 위해 싸우는 모습은 미술품이나 골동품을 다루는 작품 속 배경 속에서 이국적이고도 드라마틱하게 펼쳐지며, 예술 시장을 중심으로 사회 상류층과 이민자들의 세계가 나뉜 모습 등을 보면서 현재 세계의 씁쓸한 면모도 만날 수 있다.`,
+            infos_short: `"압도적인 완독률을 자랑하는 흡입력 만점 소설"<비밀의 계절>로 유명한 도나 타트가 11년 만에 선보인 신작 소설. 카렐 파브리티우스의 실제 그림을 소재로 한 이 책은 미술관 폭탄 테러에서 엄마를 잃고 홀로 살아남은 소년이 우연히 명화를 손에 넣게 되면서 시작한다.`,
+            meta: {
+                writer: "김필순",
+                published_date: "2022-01-17"
+            }
+        },
+        {
+            link: "./img/cover__1.jpg",
+            title: "인문학의 숲",
+            infos_long: `"압도적인 완독률을 자랑하는 흡입력 만점 소설" <비밀의 계절>로 유명한 도나 타트가 11년 만에 선보인 신작 소설. 카렐 파브리티우스의 실제 그림을 소재로 한 이 책은 미술관 폭탄 테러에서 엄마를 잃고 홀로 살아남은 소년이 우연히 명화를 손에 넣게 되면서 시작한다. 예술 작품에 얽힌 기구한 운명을 풀어가는 과정에서 작가 특유의 화려한 문장과 세밀한 설정들을 확인할 수 있다. 평범한 인생에서 벗어나버린 소년이 자신의 삶을 되찾기 위해 싸우는 모습은 미술품이나 골동품을 다루는 작품 속 배경 속에서 이국적이고도 드라마틱하게 펼쳐지며, 예술 시장을 중심으로 사회 상류층과 이민자들의 세계가 나뉜 모습 등을 보면서 현재 세계의 씁쓸한 면모도 만날 수 있다.`,
+            infos_short: `"압도적인 완독률을 자랑하는 흡입력 만점 소설"<비밀의 계절>로 유명한 도나 타트가 11년 만에 선보인 신작 소설. 카렐 파브리티우스의 실제 그림을 소재로 한 이 책은 미술관 폭탄 테러에서 엄마를 잃고 홀로 살아남은 소년이 우연히 명화를 손에 넣게 되면서 시작한다.`,
+            meta: {
+                writer: "김필순",
+                published_date: "2022-01-17"
+            }
+        },
+        {
+            link: "./img/cover__1.jpg",
+            title: "인문학의 숲",
+            infos_long: `"압도적인 완독률을 자랑하는 흡입력 만점 소설" <비밀의 계절>로 유명한 도나 타트가 11년 만에 선보인 신작 소설. 카렐 파브리티우스의 실제 그림을 소재로 한 이 책은 미술관 폭탄 테러에서 엄마를 잃고 홀로 살아남은 소년이 우연히 명화를 손에 넣게 되면서 시작한다. 예술 작품에 얽힌 기구한 운명을 풀어가는 과정에서 작가 특유의 화려한 문장과 세밀한 설정들을 확인할 수 있다. 평범한 인생에서 벗어나버린 소년이 자신의 삶을 되찾기 위해 싸우는 모습은 미술품이나 골동품을 다루는 작품 속 배경 속에서 이국적이고도 드라마틱하게 펼쳐지며, 예술 시장을 중심으로 사회 상류층과 이민자들의 세계가 나뉜 모습 등을 보면서 현재 세계의 씁쓸한 면모도 만날 수 있다.`,
+            infos_short: `"압도적인 완독률을 자랑하는 흡입력 만점 소설"<비밀의 계절>로 유명한 도나 타트가 11년 만에 선보인 신작 소설. 카렐 파브리티우스의 실제 그림을 소재로 한 이 책은 미술관 폭탄 테러에서 엄마를 잃고 홀로 살아남은 소년이 우연히 명화를 손에 넣게 되면서 시작한다.`,
+            meta: {
+                writer: "김필순",
+                published_date: "2022-01-17"
+            }
+        },
+    ]
+    // 컨테이너
+    const headerContainer=document.querySelector(".header_content");
+    // 슬라이드 버튼
+    const headerLeft=document.querySelector(".haeder_content-left");
+    const headerRigt=document.querySelector(".haeder_content-right");
+
+    const headerList=document.querySelectorAll(".header_content_center");
+    console.log(headerContainer);
+</script>
+</html>

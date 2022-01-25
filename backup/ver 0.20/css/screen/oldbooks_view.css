@@ -1,0 +1,191 @@
+@import "../components/root/_root.css";
+
+/* width: 100% 구간 */
+.old_book_container {
+    width: 100%;
+    height: auto;
+}
+/* 반응형 구간 + 1200px 미디어쿼리 적용 구간 존재 */
+.old_book-resizer {
+    /* 1200px 미만에서 padding 60 40 , 700px 미만에서 padding 60 20 */
+    width: 1100px;
+    height: auto;
+    margin: 0 auto;
+}
+/* 그리드 총 12칸 */
+.old_book_grid {
+    width: 100%;
+    height: auto;
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    
+    /* 700px 미만에서 padding 조절 */
+    /* padding: 30px 0 30px 0;
+    border-bottom: 1px solid var(--area-border-); */
+}
+/* 그리드 가로 4칸 */
+.old_book_header {
+    padding: 10px;
+    grid-column: span 4;
+}
+.old_book_header > img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+/* 그리드 가로 8칸, 플랙스 Column 방향 */
+.old_book_metas {
+    grid-column: span 8;
+
+    padding: 40px 0 40px 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    position: relative;
+}
+/* 버튼 */
+.old_book-absolute {
+    position: absolute;
+
+    display: flex;
+    /* 미디어쿼리 700px 미만일 때 row 로 변경 */
+    flex-direction: column;
+    top: 10px;
+    right: 10px;
+}
+/* 중고책 심사 신청하기, 파기하기 버튼 */
+.old_book_add,
+.old_book_remove {
+    font-size: 15px;
+    text-align: right;
+    cursor: pointer;
+}
+/* 높이 40% */
+.old_book_detailed > div {
+    gap: 10px;
+    display: flex;
+}
+/* 높이 60%, display flex */
+.old_book_prices {
+    gap: 12px;
+    display: flex;
+}
+.old_book_prices > div > div {
+    gap: 10px;
+    display: flex;
+}
+.old_book_prices p {
+    margin-top: 10px;
+}
+.old_book_btn_menus {
+    padding: 10px;
+    width: 300px;
+    height: 220px;
+    background-color: #F2F2F2;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.old_book_count {
+    padding: 0 10px;
+    width: 100%;
+    height: 37px;
+    background-color: white;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.old_book_btn_container {
+    border-top: 1px solid black;
+    padding-top: 15px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+}
+.old_book_btn {
+    width: 100%;
+    height: 37px;
+    color: white;
+    font-size: 14px;
+    font-weight: 500;
+}
+.old_book_btn_1 {
+    background-color: #DA4444;
+}
+.old_book_btn_2 {
+    background-color: #266444;
+}
+.old_book_btn_3 {
+    background-color: #C4C4C4;
+}
+@media screen and (max-width: 1200px) {
+    .old_book-resizer {
+        padding: 60px 40px;
+        width: 100%;
+    }
+    .old_book_header {
+        padding: 20px;
+    }
+}
+@media screen and (max-width: 1000px) {
+    .old_book_header {
+        display: none;
+    }
+    .old_book_metas {
+        padding: 20px;
+        grid-column: span 12;
+    }
+}
+@media screen and (max-width: 700px) {
+    .old_book_grid {
+        padding: 0;
+        padding-bottom: 10px;
+    }
+    .old_book-resizer {
+        padding: 30px 20px;
+    }
+    .old_book-absolute {
+        gap: 10px;
+        flex-direction: row;
+    }
+    .old_book_detailed > div {
+        font-size: 13px;
+    }
+    .old_book_detailed > h2 {
+        font-size: 20px;
+    }
+    /* 저자 빼고 다 지우기 */
+    .old_book_detailed > div:nth-child(3) > h4:not(h4:nth-child(1)) {
+        display: none;
+    }
+    /* 발행일 페이지 뺴고 다 지우기 */
+    .old_book_detailed > div:nth-child(4) > h4:not(h4:nth-child(1),h4:nth-child(3)) {
+        display: none;
+    }
+    .old_book_prices {
+        flex-direction: column;
+    }
+    .old_book_prices > div > div {
+        font-size: 13px;
+    }
+    .old_book_prices p {
+        font-size: 13px;
+    }
+    .old_book_btn_menus {
+        width: 80%;
+        height: auto;
+        margin: 0 auto;
+    }
+    .old_book_btn_container {
+        border-top: none;
+        padding-top: 10px;
+    }
+    .old_book_btn {
+        height: 28px;
+        font-size: 12px;
+    }
+}

@@ -3,8 +3,11 @@
     --nav-backColor-: #808080;
     --nav-menuFontColor-: #122236;
 
-    --header-backColor: #f1f1f1;
-    --header-color: #5C626A;
+    --header-backColor-: #f1f1f1;
+    --header-color-: #5C626A;
+
+
+    --area-border-: #b6b6b6;
 
     /* 표준 폰트입니다. */
     --button-font-: 18px;

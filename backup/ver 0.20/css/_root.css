@@ -1,0 +1,7 @@
+/* 기존의 변수는 절대로 변경하시면 안됩니다. */
+:root {
+    --nav-height-: 55px;
+    --nav-backColor-: #F2F2F2;
+
+    --body-backColor-: #F2F2F2;
+}
